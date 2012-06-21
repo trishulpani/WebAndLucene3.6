@@ -33,9 +33,9 @@ public class LuceneHelpDocFinderServlet extends HttpServlet {
 		
 		String queryString=request.getParameter("query");
 		
-		System.out.println("Query for "+ queryString);
+		System.out.println("Query for :"+ queryString);
 		
-		String docBase = request.getRealPath("/")+"WEB-INF\\content";
+		String docBase = request.getServletContext().getRealPath("/")+"WEB-INF\\content";
 		
 		ServletOutputStream out = response.getOutputStream();
 		
@@ -56,12 +56,12 @@ public class LuceneHelpDocFinderServlet extends HttpServlet {
 			long finishedIn = System.currentTimeMillis() - beginTime;
 		
 			
-			System.out.println(hits.totalHits);
+			System.out.println("Hit count : "+hits.totalHits);
 			
 			out.println("<h3>Found " + hits.totalHits+ " matching documents containing " +
 					" searched item '"+ queryString +"'</h3>");
 			
-			out.println("<p>which took "+ finishedIn + " ms to execute</p>");
+			out.println("<p>and took "+ finishedIn + " ms to execute</p>");
 			
 			ScoreDoc[] scoreDocs = hits.scoreDocs;
 			
