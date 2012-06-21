@@ -1,0 +1,9 @@
+Lucene Help
+
+This is a sample web application based on JSP/Servlet and Lucene 3.6.
+All required Lucene libraries are bundled. Tested working on Tomcat 7.x.
+
+The web app indexes a predefined directory contents using Lucene and the user can
+subsequently search for an item from a simple search screen. 
+
+Application is for demo purpose only.
